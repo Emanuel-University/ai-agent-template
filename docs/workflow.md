@@ -5,7 +5,7 @@ pull request or making a release.
 
 ## For each task
 
-1. Write or update the spec in docs/specs/.
+1. Write or update the spec in docs/specs/, starting from docs/specs/TEMPLATE.md.
 2. Ask the agent for a plan first, then for the code.
 3. Read the diff, run the project, run bin/check.
 4. Write what happened in docs/ai-log.md.

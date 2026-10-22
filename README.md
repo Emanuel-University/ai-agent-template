@@ -23,6 +23,10 @@ It contains no application code, so it fits any stack. Used in the course
      Read AGENTS.md in the repository root — it is the entry point
      for AI agents working here.
      ```
+   - `GEMINI.md` with a single line:
+     ```
+     @AGENTS.md
+     ```
 5. Delete the documents in `docs/` that do not apply to your project, together
    with their line in `AGENTS.md`.
 6. Run the check until it is green:
@@ -75,5 +79,6 @@ with Git for Windows, so Git must be installed.
 - One subject per document, one line per document in the index.
 - A lesson learned goes into the document that owns the subject, not into
   `AGENTS.md`. Add a rule after a real mistake, not to prevent an imagined one.
+- If present, `GEMINI.md` points to `AGENTS.md` instead of copying it.
 - What must be remembered about the project is written in the repository, not
   left in a chat or in a tool's private memory.

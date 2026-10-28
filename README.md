@@ -72,6 +72,30 @@ end of `bin/check`.
 On Windows, `bin\check.cmd` runs the same script through the `sh` that comes
 with Git for Windows, so Git must be installed.
 
+## Skills
+
+A skill is a procedure written once, in the repository: a folder in
+`.agents/skills/` with a `SKILL.md` that holds a name, a description and the
+steps. The agent loads it when a request matches the description, or when you
+type `/<name>`.
+
+- Make a skill the third time you write the same prompt, not before: a skill
+  comes after a real repetition, not to prevent an imagined one.
+- Path: `.agents/skills/<name>/SKILL.md`, exactly one level deep, and `name`
+  is the folder name (lowercase letters, digits, hyphens). A skill in the
+  wrong place or with the wrong name is ignored, without an error.
+- The description decides whether the skill is used: what it does,
+  "Use when ...", and what goes wrong without it.
+- A skill that changes something outside the repository (publishing,
+  pushing) gets `disable-model-invocation: true`: it runs only on `/<name>`.
+- Copilot, Cursor, Codex and Gemini CLI read `.agents/skills/` on their own.
+  For Claude Code, add one line to "Where to look" in `AGENTS.md`:
+  ```
+  - .agents/skills/: procedures, one folder each; read the description at the top of each SKILL.md and follow the one that matches the task
+  ```
+- Test a skill in a new session, without naming it: it should start when the
+  request matches and stay out of the way when it does not.
+
 ## Rules of thumb
 
 - Keep `AGENTS.md` small. It is sent with every request; everything in `docs/`
